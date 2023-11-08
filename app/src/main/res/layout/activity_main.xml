@@ -8,57 +8,103 @@
 
     <EditText
         android:id="@+id/editTextFirstName"
-        android:layout_width="fill_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginBottom="19dp"
         android:ems="10"
         android:gravity="center"
         android:hint="First Name"
         android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/editTextLastName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextLastName"
-        android:layout_width="fill_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/editTextFirstName"
-        android:layout_marginTop="115dp"
+        android:layout_marginBottom="24dp"
         android:ems="10"
         android:gravity="center"
         android:hint="Last Name"
         android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/editTextEmail"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/editTextFirstName" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextFirstName" />
 
     <EditText
         android:id="@+id/editTextEmail"
-        android:layout_width="fill_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/editTextLastName"
-        android:layout_marginTop="95dp"
+        android:layout_marginBottom="27dp"
         android:ems="10"
         android:gravity="center"
         android:hint="Email"
         android:inputType="textEmailAddress"
+        app:layout_constraintBottom_toTopOf="@+id/editTexEdad"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/editTextLastName" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextLastName" />
 
     <Button
         android:id="@+id/ButtonInsert"
-        android:layout_width="fill_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/editTextEmail"
         android:layout_centerHorizontal="true"
+        android:layout_marginBottom="78dp"
         android:text="Insert Record on Server"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="447dp" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTelefono" />
+
+    <EditText
+        android:id="@+id/editTexEdad"
+        android:layout_width="409dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="30dp"
+        android:ems="10"
+        android:hint="Edad"
+        android:inputType="number"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/editTextSexo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextEmail" />
+
+    <EditText
+        android:id="@+id/editTextSexo"
+        android:layout_width="399dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="22dp"
+        android:ems="10"
+        android:hint="Sexo"
+        android:inputType="text"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/editTextTelefono"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTexEdad" />
+
+    <EditText
+        android:id="@+id/editTextTelefono"
+        android:layout_width="400dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="157dp"
+        android:ems="10"
+        android:hint="Teléfono"
+        android:inputType="phone"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/ButtonInsert"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.545"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextSexo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

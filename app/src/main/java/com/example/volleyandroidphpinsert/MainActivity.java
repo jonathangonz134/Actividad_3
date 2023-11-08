@@ -22,7 +22,7 @@ import java.util.Map;
 public class MainActivity extends AppCompatActivity {
 
     // Creating EditText.
-    EditText FirstName, LastName, Email ;
+    EditText FirstName, LastName, Email, Edad, Sexo, Telefono ;
 
     // Creating button;
     Button InsertButton;
@@ -31,13 +31,13 @@ public class MainActivity extends AppCompatActivity {
     RequestQueue requestQueue;
 
     // Create string variable to hold the EditText Value.
-    String FirstNameHolder, LastNameHolder, EmailHolder ;
+    String FirstNameHolder, LastNameHolder, EmailHolder, EdadHolder, SexoHolder, TelefonoHolder ;
 
     // Creating Progress dialog.
     ProgressDialog progressDialog;
 
     // Storing server url into String variable.
-    String HttpUrl = "http://asistencia.dx.am/registration.php";
+    String HttpUrl = "https://jonathangonz134.000webhostapp.com/registro_de_usuarios.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +48,9 @@ public class MainActivity extends AppCompatActivity {
         FirstName = (EditText) findViewById(R.id.editTextFirstName);
         LastName = (EditText) findViewById(R.id.editTextLastName);
         Email = (EditText) findViewById(R.id.editTextEmail);
+        Edad = (EditText) findViewById(R.id.editTexEdad);
+        Sexo = (EditText) findViewById(R.id.editTextSexo);
+        Telefono = (EditText) findViewById(R.id.editTextTelefono);
 
         // Assigning ID's to Button.
         InsertButton = (Button) findViewById(R.id.ButtonInsert);
@@ -63,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 // Showing progress dialog at user registration time.
-                progressDialog.setMessage("Please Wait, We are Inserting Your Data on Server");
+                progressDialog.setMessage("Espere, estamos insertando sus datos en el Servidor");
                 progressDialog.show();
 
                 // Calling method to get value from EditText.
@@ -106,6 +109,9 @@ public class MainActivity extends AppCompatActivity {
                         params.put("name", FirstNameHolder);
                         params.put("username", LastNameHolder);
                         params.put("password", EmailHolder);
+                        params.put("edad", EdadHolder);
+                        params.put("sexo", SexoHolder);
+                        params.put("telefono", TelefonoHolder);
 
                         return params;
                     }
@@ -129,6 +135,9 @@ public class MainActivity extends AppCompatActivity {
         FirstNameHolder = FirstName.getText().toString().trim();
         LastNameHolder = LastName.getText().toString().trim();
         EmailHolder = Email.getText().toString().trim();
+        EdadHolder = Edad.getText().toString().trim();
+        SexoHolder = Sexo.getText().toString().trim();
+        TelefonoHolder = Telefono.getText().toString().trim();
 
     }
 
